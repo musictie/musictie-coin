@@ -45,7 +45,7 @@ Music Tie 에서는 이부분에 초점을 맞췄습니다.
 
 ## Action
 
-
+![musictie-whiteboard](https://user-images.githubusercontent.com/897510/40409709-adc927e0-5ea6-11e8-9877-7f0bf09dd2b2.jpeg)
 
 1. OOO 음악 요청
   - from : 리스너
@@ -70,5 +70,5 @@ Music Tie 에서는 이부분에 초점을 맞췄습니다.
   - to : 리스너
 
 ## Support
-- 이 프로젝트는 이더리운연구회(http://www.etherstudy.net)의 지원을 받고 있습니다
+- 이 프로젝트는 이더리운연구회(http://www.etherstudy.net)의 도움을 받고 있습니다
 
