@@ -43,7 +43,7 @@ Music Tie 에서는 이부분에 초점을 맞췄습니다.
 
 - Blockchain 처리 속도 개선
 
-## Action
+## Action - 0.1 version
 
 ![musictie-whiteboard](https://user-images.githubusercontent.com/897510/40409709-adc927e0-5ea6-11e8-9877-7f0bf09dd2b2.jpeg)
 
@@ -68,6 +68,12 @@ Music Tie 에서는 이부분에 초점을 맞췄습니다.
 6. 음악 제공
   - from : Music Tie 서버
   - to : 리스너
+  
+## Action - 0.2 version
+
+![img_5045](https://user-images.githubusercontent.com/897510/40751422-a4d3e3f8-649d-11e8-8546-70d297aa9b2e.jpg)
+
+> Action 정리 해주세요
 
 ## Support
 - 이 프로젝트는 이더리운연구회(http://www.etherstudy.net)의 도움을 받고 있습니다
