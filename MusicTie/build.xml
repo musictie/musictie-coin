@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="."  name="MyProject">
+	<property environment="env"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="workspace.dir"   value="${basedir}"/>
+	<property name="lib.dir"         value="${workspace.dir}/WebContent/WEB-INF/lib"/>
+	<property name="source.dir"      value="${workspace.dir}/src"/>
+	<property name="build.dir"       value="${basedir}/build"/>
+	<property name="web.dir"         value="${workspace.dir}/WebContent"/>
+	<property name="test.reports"    value="${workspace.dir}/test"/>
+	<property name="java.target.ver" value="1.8"/>
+	<property name="java.source.ver" value="1.8"/>
+	<path id="MyProject.classpath">
+		<pathelement location="${build.dir}"/>
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+			<include name="*.zip"/>
+		</fileset>
+	</path>
+
+	<!-- init -->
+	<target name="init">
+		<echo message="------ MyProject Project Jenkins Init ---------" />
+		<echo message="workspace.dir : ${workspace.dir}" />
+		<echo message="lib.dir : ${lib.dir}" />
+		<echo message="source.dir : ${source.dir}" />
+		<echo message="build.dir : ${build.dir}" />
+		<echo message="web.dir : ${web.dir}" />
+		<echo message="deploy.dir : ${deploy.dir}" />
+		<tstamp>
+			<format property="DSTAMP" pattern="yyyy-MM-dd" />
+			<format property="TSTAMP" pattern="HH:mm:ss" />
+		</tstamp>
+		<echo message="${ant.project.name} build started at : ${DSTAMP} ${TSTAMP}" />
+
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${deploy.dir}/WEB-INF/classes"/>
+	</target>
+
+
+	<!-- clean -->
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<!-- cleanall -->
+	<target depends="clean" name="cleanall"/>
+
+
+	<!-- build -->
+	<target depends="init" name="build">
+		<echo message="---- build Start ----"/>
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<javac fork="yes" debug="true" debuglevel="${debuglevel}" destdir="${build.dir}" includeantruntime="false" source="${java.source.ver}" target="${java.target.ver}" encoding="UTF-8">
+			<src path="${source.dir}"/>
+			<classpath refid="MyProject.classpath"/>
+		</javac>
+	</target>
+	
+	<!-- jUnit Test -->
+	<target name="test" depends="build">
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath>
+                <path refid="MyProject.classpath"/>
+            </classpath>
+        	<formatter type="xml" />
+        	<batchtest fork="yes" todir="${test.reports}">
+				<fileset dir="${build.dir}">
+					<include name="**/*Test.class" />
+					<exclude name="*/Test*All.*" />
+				</fileset>
+			</batchtest>
+        </junit>
+    </target>
+	
+	<!-- jUnit Test Report -->
+	<target name="junitreport" depends="test">
+        <junitreport todir="${test.reports}">
+            <fileset dir="${test.reports}" includes="TEST-*.xml"/>
+            <report todir="${test.reports}"/>
+        </junitreport>
+    </target>
+
+	<!-- deploy for Production -->
+	<target name="deploy_production" depends="build" description="Deploy application">
+		<echo message="### deploy JSP Start : ${deploy.dir} + ${web.dir}" />
+		<copy todir="${deploy.dir}" preservelastmodified="true">
+			<fileset dir="${web.dir}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<echo message="### deploy JSP END " />
+		<copy todir="${deploy.dir}/WEB-INF/classes" preservelastmodified="true">
+			<fileset dir="${source.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+		<copy todir="${deploy.dir}/WEB-INF/lib" preservelastmodified="true">
+			<fileset dir="${lib.dir}">
+				<include name="*.jar"/>
+				<include name="*.zip"/>
+			</fileset>
+		</copy>
+		<copy todir="${deploy.dir}/WEB-INF/classes" preservelastmodified="true">
+			<fileset dir="${build.dir}">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+		
+		<!-- Permission -->
+		<!--
+		<chmod dir="${deploy.dir}" perm="ugo+rx" includes="**/*.*" type="both" />
+		-->
+		
+		<chmod perm="755" type="both">
+			<fileset dir="${deploy.dir}">
+				<include name="**/*" />
+			</fileset>
+		</chmod>
+		
+		<chmod perm="700" type="both">
+			<fileset dir="${deploy.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+			</fileset>
+		</chmod>
+
+		
+	</target>
+
+</project>
