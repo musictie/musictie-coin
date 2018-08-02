@@ -225,7 +225,132 @@
                                         <li><i class="fa fa-clock-o"></i>2017.08.10 (09:00 pm - 02:00 am)</li>
                                         <li><i class="fa fa-map"></i>홍대 뮤직타이 사운드홀, 1관</li>
                                     </ul>
-                                    <a href="#" class="btn btn-primary">Get a Ticket</a>
+                                    <button href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Get a Ticket</button>
+                                    <button href="" class="btn btn-primary" onClick="metamaskCall();">Payment</button>
+                                    
+                                    
+                                    
+                                    <!--  Model Section -->
+									<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+				 								<div class="modal-header">
+													<!-- <h5 class="modal-title" id="exampleModalLabel">랭커평가</h5> -->
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="video.pause();">
+														<span aria-hidden="true" style="font-weight: 100;">&times;</span>
+													</button>
+												</div>
+											<div class="modal-body">
+												<div style="font-weight: 300; padding: 0 40px 40px 40px; font-size: 14px; color: #999;">
+													<dl>
+														<dt style="font-weight: 400; font-size: 16px; color: #000">HLS</dt>
+														<dd>
+															&nbsp;&nbsp;&nbsp;&nbsp;- HTTP Live Streaming 
+														
+														</dd>
+													</dl>
+												</div>
+												
+												
+												<div>
+									            	<div>
+									            	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+									
+													<!-- Or if you want a more recent canary version -->
+													<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+													<video id="video" controls preload="none" style="width: 100%;"></video>
+													<button onClick="videoPlay();">Play</button>
+													<script>
+														var video = document.getElementById('video');
+														function videoPlay() {
+															
+															  if(Hls.isSupported()) {
+															    var hls = new Hls();
+															  	//hls.loadSource('http://www.streambox.fr/playlists/test_001/stream.m3u8');
+															    hls.loadSource('https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8');
+															    //hls.loadSource('https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8');
+															    
+															    hls.attachMedia(video);
+															    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+															      video.play();
+															  });
+															 }
+															 // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+															 // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+															 // This is using the built-in support of the plain video element, without using hls.js.
+															 // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven
+															 // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
+															  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+															    video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+															    video.addEventListener('loadedmetadata',function() {
+															      //video.play();
+															    });
+															  }
+														}
+													  
+													</script>
+									            	</div>
+									            </div>
+												
+												
+												
+											</div>
+										</div>
+										</div>
+									</div> <!-- Modal -->
+									
+<script>
+function metamaskCall() {
+	
+	const isMetaMaskEnabled = () => !!window.web3;
+	
+	if (!isMetaMaskEnabled()) {
+	  alert('MetaMask is not enabled.');
+	  retuen;
+	}
+	
+	const isMainNetwork = () => {
+	  return new Promise((resolve, reject) => {
+	    window.web3.version.getNetwork((err, netId) => {
+	      if (err) {
+	        reject(err);
+	        return;
+	      }
+	      netId === '1' ? resolve() : reject('not main network');
+	    });
+	  });
+	}
+	
+	const sendETH = (amount, to) => {
+	  return new Promise((resolve, reject) => {
+	    window.web3.eth.sendTransaction({
+	      to: to,
+	      value: amount
+	    }, (error, hash) => {
+	      if (error) {
+	        reject(error);
+	        return;
+	      }
+	      resolve(hash);
+	    })
+	  });
+	}
+	
+	isMainNetwork()
+	  .then(() => {
+	    // send 1ETH to author's account :)
+	    return sendETH(window.web3.toWei(1), '0x629D453D3247Cb3CeB1bd4b7D3f9f84074de76Ac');
+	  })
+	  .then((hash) => {
+	    console.info('hash', hash);
+	  })
+	  .catch(console.error);
+}
+</script>
+                                    
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div><!-- row -->
@@ -282,101 +407,6 @@
                     </div>
                 </div>
             </div><!-- audio section -->
-            
-            
-            
-            
-            <div>
-            	<div>
-            	https://github.com/video-dev/hls.js/
-            	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
-<!-- Or if you want a more recent canary version -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-<video id="video"></video>
-<script>
-  var video = document.getElementById('video');
-  if(Hls.isSupported()) {
-    var hls = new Hls();
-    hls.loadSource('http://www.streambox.fr/playlists/test_001/stream.m3u8');
-    //hls.loadSource('https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8');
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-      video.play();
-  });
- }
- // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
- // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
- // This is using the built-in support of the plain video element, without using hls.js.
- // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven
- // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
-  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
-    video.addEventListener('loadedmetadata',function() {
-      //video.play();
-    });
-  }
-</script>
-            	</div>
-            </div>
-            
-            
-            
-<div>
-Hello WOrld
-<button onclick="aaa()"> Hello </button>
-
-<script>
-function aaa() {
-	
-alert(2);
-const isMetaMaskEnabled = () => !!window.web3;
-
-if (!isMetaMaskEnabled()) {
-  alert('MetaMask is not enabled.');
-  retuen;
-}
-
-const isMainNetwork = () => {
-  return new Promise((resolve, reject) => {
-    window.web3.version.getNetwork((err, netId) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      netId === '1' ? resolve() : reject('not main network');
-    });
-  });
-}
-
-const sendETH = (amount, to) => {
-  return new Promise((resolve, reject) => {
-    window.web3.eth.sendTransaction({
-      to: to,
-      value: amount
-    }, (error, hash) => {
-      if (error) {
-        reject(error);
-        return;
-      }
-      resolve(hash);
-    })
-  });
-}
-
-isMainNetwork()
-  .then(() => {
-    // send 1ETH to author's account :)
-    return sendETH(window.web3.toWei(1), '0x629D453D3247Cb3CeB1bd4b7D3f9f84074de76Ac');
-  })
-  .then((hash) => {
-    console.info('hash', hash);
-  })
-  .catch(console.error);
-}
-</script>
-
-</div>
             
             
 

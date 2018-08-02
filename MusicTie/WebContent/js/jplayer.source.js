@@ -8,8 +8,7 @@
                     {
                         title:"Little Bad Girl",
                         artist:"Gibson",
-                        mp3:"http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8",
-                        oga:"http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8"
+                        mp3:"/music/01.mp3"
                     },
                     {
                         title:"Stirring of a Fool",
