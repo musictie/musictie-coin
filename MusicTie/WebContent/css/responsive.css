@@ -1,0 +1,694 @@
+@media (min-width: 1600px) {
+	.section-title,
+	.festival-content,
+	.audio-player,
+	.clients,
+	.blog-content {
+	    max-width: 1570px;
+	}	
+}
+
+
+/* lg */ 
+@media (min-width: 1400px) {
+
+	.full-width .section-title,
+	.full-width .festival-content,
+	.full-width .audio-player,
+	.full-width .clients,
+	.full-width .blog-content {
+	    max-width: 100%;
+	}	
+	.album-info {
+		width: 11%;
+	}
+	.jp-progress {
+		width: 70% !important;
+	}
+	#audio-player {
+		width: 89%;
+	}
+	.jp-volume-controls {
+		width: 92px;
+		padding-right: 0;
+	}
+	.box-layout .jp-progress {
+		width: 58% !important;
+	}
+	.box-layout #audio-player {
+		width: 85%;
+		padding-left: 170px;
+	}
+
+
+}
+
+@media (min-width: 1200px) {
+
+	.box-layout .collapse.navbar-collapse {
+		padding: 0;
+	}	
+
+	.home-two .container {
+		padding-left: 30px;
+		padding-right: 30px;
+		width: 1140px;
+	}
+
+	.home-two .upcoming-events .artists-info {
+		padding-bottom: 20px;
+	}
+
+	.home-two .upcoming-events .artist:hover .artists-info {
+		padding-bottom: 60px;
+	}
+
+	.home-two .artist:hover .button {
+		bottom: 20px;
+	}
+
+	.artists-info .time h1 {
+		margin-bottom: 0;
+	}
+
+	.jp-progress {
+		width: 60%;
+	}
+
+	#audio-player .jp-playlist .jp-playlist-item.jp-playlist-current  {
+		margin-left: -165px;
+	}
+
+	.home-two .product-image img {
+		width: 75%;
+	}
+
+}
+
+@media (min-width: 1200px) and (max-width: 1350px) {
+
+	.upcoming-events .artists-info {
+		padding-bottom: 20px;
+	}
+
+	.artists-info .time h1 {
+		margin-bottom: 0;
+	}
+
+	.upcoming-events .artist:hover .artists-info {
+		padding-bottom: 50px;
+	}
+
+	.upcoming-events .artist:hover .button {
+		bottom: 15px;
+	}
+}
+
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.box-layout .collapse.navbar-collapse,
+	.box-layout #navigation .container {
+		padding: 0;
+	}
+	.box-layout .jp-progress {
+		width: 50%;
+	}
+	.home-two .container {
+		padding-left: 30px;
+		padding-right: 30px;
+	}	
+
+	.home-banner h1 {
+		font-size: 118px;
+	}
+	.products li {
+		width: 25%;
+	}
+	.products li img {
+		width: 75%;
+	}
+	.artists li {
+		width: 33%;
+		margin-top: 15px;
+	}
+
+	.jp-progress {
+		width: 48%;
+	}	
+
+	#audio-player .jp-playlist .jp-playlist-item.jp-playlist-current {
+		margin-left: -150px;
+	}
+
+	.section-title a {
+		margin-right: 20px;
+	}
+
+	.breadcrumb a {
+		margin-right: 0;
+	}	
+
+	#portfolio-menu {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	#portfolio-menu li {
+		padding: 0 8px;
+	}	
+	.festival-info {
+		padding-top: 50px;
+		padding-left: 0;
+	}	
+
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.box-layout .collapse.navbar-collapse,
+	.box-layout #navigation .container {
+		padding: 0;
+	}	
+
+	.main-wrapper {
+		padding-left: 10px;
+	}
+
+	#countdown li span {
+	    font-size: 55px;
+	    line-height: 65px;
+	}	
+
+	.navbar-header {
+		margin-bottom: 30px;
+	}
+
+	.navbar-collapse {
+		padding: 0;
+	}
+
+	#navigation .nav > li > a {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	.nav.navbar-nav {
+		float: left;
+	}
+
+	.sub-menu.menu {
+		right: inherit;
+		left: 0;
+	}
+
+	.events-info {
+		padding: 0 20px;
+	}
+
+	.events-info h1 {
+		font-size: 30px;
+	}
+
+	.festival-info {
+		padding-top: 10px;
+		padding-left: 0;
+		padding-bottom: 0;
+	}
+	.festival-info .about-time {
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	.section-title {
+		padding-right: 20px;
+	}
+
+	.section-title h1 {
+		font-size: 36px;
+	}
+
+	.album-info {
+		padding-left: 10px;
+	}
+
+	#audio-player .jp-playlist .jp-playlist-item.jp-playlist-current {
+		margin-left: -135px;
+		font-size: 16px;
+	}
+
+	.jp-volume-controls {
+		display: none;
+	}
+
+	.jp-progress {
+		width: 54%;
+	}
+
+	.artists li {
+		width: 33%;
+		margin-top: 10px;
+	}
+
+	.products li {
+		width: 50%;
+	}
+
+	.product-image img,
+	.products li img {
+		width: 75%;
+	}
+
+	.twitter-image {
+		margin-right: 20px;
+	}
+
+	.upcoming-events .artists-info {
+		padding-bottom: 20px;
+	}
+
+	.upcoming-events .artist:hover .artists-info {
+		padding-bottom: 60px;
+	}
+
+	.upcoming-events .artist:hover .button {
+		bottom: 20px;
+	}
+
+	#header {
+		margin-bottom: 120px;
+	}
+
+	#gmap {
+		min-height: 450px;
+	}
+
+	.schedule-menu li:nth-child(2n) {
+	    margin-right: 0;
+	}
+
+	.schedule-menu li + li {
+		margin-left: 21%;
+	}
+
+	.upcoming-events.performers .artists-info {
+	    padding-bottom: 90px;
+	}
+
+	.upcoming-events.performers .time span {
+		font-size: 72px;
+	}
+
+	.upcoming-events.performers .artist:hover .artists-info {
+		padding-bottom: 140px;
+	}
+
+	.upcoming-events.performers .artist:hover .button {
+		bottom: 90px;
+	}	
+
+	.pagination > li:first-child > a, 
+	.pagination > li:first-child > span {
+		margin-right: 0;
+	}
+
+	.pagination > li:last-child > a, 
+	.pagination > li:last-child > span {
+		margin-left: 0;
+	}
+
+	.pagination li a {
+		line-height: 45px;
+	}
+
+	.artists-section.performers .social {
+		left: 46%;
+	}
+
+}
+
+
+/* xs */
+@media (max-width: 767px) {
+
+	.main-wrapper {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.home-content {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.home-banner h1 {
+		font-size: 65px;
+	}
+
+	#countdown li {
+		width: 80px;
+	}
+
+	#countdown {
+		margin-bottom: 30px;
+	}
+
+	#countdown li span {
+		font-size: 30px;
+		line-height: 42px;
+	}
+
+	#countdown li + li {
+		margin-left: 0;
+	}
+
+	.nav.navbar-nav {
+		float: none;
+	}
+
+	#header #navigation .nav > li > a,
+	#navigation .nav > li > a {
+		padding-top: 3px;
+		padding-bottom: 0;
+		line-height: 40px;
+	}
+
+	ul.sub-menu {
+		border-top: 1px solid #fff;
+		top: 43px;
+	}
+
+	.section-title {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.section-title h1 {
+		font-size: 24px;
+	}
+
+	.section-title a {
+		margin-right: 20px;
+		margin-top: 20px;
+	}
+
+	.jp-volume-controls {
+		display: none;
+	}
+
+	.products li,
+	.artists li {
+		width: 50%;
+	}
+
+	.upcoming-events .artist:hover .artists-info {
+		padding-bottom: 60px;
+	}
+
+	.upcoming-events .artist:hover .button {
+		bottom: 25px;
+	}
+
+	.blog-section .entry-post {
+		max-width: 460px;
+	}
+
+	.entry-thumbnail img {
+		width: 100%;
+	}
+
+	.product-image img {
+		width: 75%;
+	}
+
+	.artists-info .time h1 {
+		line-height: 30px;
+		margin: 0;
+	}
+
+	.festival-info {
+		padding-top: 20px;
+		padding-left: 0;
+	}
+
+	.audio-section {
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+		
+	#audio-player .jp-playlist,
+	.album-info {
+		display: none;
+	}
+
+	#audio-player {
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.jp-controls {
+		margin-left: 15px;
+	}
+
+	.jp-play {
+		margin: 0;
+	}
+
+	.jp-progress {
+		width: 54%;
+	}
+
+	.twitter-feed {
+		padding-bottom: 30px;
+	}
+
+	.twitter-feed ul {
+		padding-left: 0;
+	}
+
+	.twitter-image {
+		margin-right: 20px;
+	}
+
+	.twitter-info h4 {
+		margin-top: 0;
+	}
+
+	.breadcrumb {
+		padding: 0;
+	}
+
+	.breadcrumb a {
+		margin-right: 0;
+	}
+
+	#portfolio-menu {
+		padding: 10px;
+		margin-bottom: 30px;
+	}
+
+	#portfolio-menu li {
+		line-height: 40px;
+		margin-bottom: 2px;
+		padding: 0 8px;
+	}
+
+	.performer h4 {
+		margin-top: 10px;
+		margin-bottom: 15px;
+	}
+
+	#gmap {
+		min-height: 220px;
+	}
+
+	.comments-area li:last-child {
+		padding-left: 95px;
+	}
+
+	.footer {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.flickr-feed .flickr {
+		float: left;
+	}	
+
+	.footer-bottom {
+		margin-top: 20px;
+	}
+
+	.footer .copyright {
+		text-align: center;
+	}
+
+	#header {
+		margin-bottom: 40px;
+	}
+
+	.blog-section.blog {
+		padding-bottom: 0;
+	}
+
+	.page {
+		padding-bottom: 30px;
+	}
+
+	.comments-area li {
+		padding-bottom: 20px;
+	}
+
+	.sponsor-image {
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: 40px;
+	}
+
+	.sponsor-image img {
+		display: inline-block;
+	}
+
+	.become-sponsor .sponsor-info h1 {
+		font-size: 40px;
+	}
+
+	.upcoming-events.performers .artist {
+		margin-bottom: 10px;
+	}
+
+	.upcoming-events.performers .artists-info {
+	    padding-bottom: 90px;
+	}
+
+	.upcoming-events.performers .time span {
+		font-size: 72px;
+	}
+
+	.upcoming-events.performers .artist:hover .artists-info {
+		padding-bottom: 140px;
+	}
+
+	.upcoming-events.performers .artist:hover .button {
+		bottom: 90px;
+	}	
+
+    .upcoming-events.performers .artists-info h2 {
+    	margin-top: 20px;
+    	margin-bottom: 10px;
+    }
+
+	.pagination > li:first-child > a, 
+	.pagination > li:first-child > span {
+		margin-right: 0;
+	}
+
+	.pagination > li:last-child > a, 
+	.pagination > li:last-child > span {
+		margin-left: 0;
+	}
+
+	.pagination li a {
+		line-height: 30px;
+	}  
+	.product-section.product .product {
+		margin-bottom: 0;
+	}  
+}
+
+/* XS Portrait */
+
+@media (max-width: 479px) {
+
+	.navbar-brand > img {
+		width: 75%;
+	}
+
+	#countdown li {
+		width: 68px;
+	}
+
+	.events-info {
+		padding: 0 20px;
+		top: 40%;
+	}
+
+	.events-info h1 {
+		font-size: 36px;
+	}
+
+	.section-title h1 {
+		float: none;
+	}
+
+	.section-title a {
+		float: none;
+	}
+
+	.products li,
+	.artists li {
+		width: 100%;
+	}	
+
+	.artist {
+		margin-bottom: 10px;
+	}
+
+	.artists-section.performers .artist-image {
+		max-width: 100%;
+	}
+
+	.twitter-image {
+		float: none;
+		margin-bottom: 20px;
+	}
+
+	.jp-progress {
+		width: 29%;
+	}
+
+	.breadcrumb {
+		float: none;
+		margin-top: 10px;
+		padding: 0;
+	}
+
+	.upcoming-events.performers .artists-info,
+	.upcoming-events .artists-info {
+	    padding-bottom: 55px;
+	}
+
+	.upcoming-events.performers .artist:hover .artists-info,
+	.home-two .upcoming-events .artist:hover .artists-info,
+	.upcoming-events .artist:hover .artists-info {
+	     padding-bottom: 100px;
+	}	
+
+	.upcoming-events.performers .artist:hover .button,
+	.upcoming-events .artist:hover .button {
+	     bottom: 45px;
+	}	
+
+	.artists-info .time h1 {
+		line-height: 75px;
+	}	
+
+    .upcoming-events.performers .time h1 {
+    	line-height: 30px;
+    }	
+
+	.comments-area li:last-child {
+		padding-left: 0;
+	}
+
+	.schedule-menu li + li {
+		margin-left: 10%;
+	}
+
+	.twitter-feed ul li {
+		margin-top: 10px;
+	}
+}
+
