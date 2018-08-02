@@ -298,8 +298,8 @@
   var video = document.getElementById('video');
   if(Hls.isSupported()) {
     var hls = new Hls();
-    // src : hls.loadSource('http://www.streambox.fr/playlists/test_001/stream.m3u8');
-    hls.loadSource('https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8');
+    hls.loadSource('http://www.streambox.fr/playlists/test_001/stream.m3u8');
+    //hls.loadSource('https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8');
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED,function() {
       video.play();
