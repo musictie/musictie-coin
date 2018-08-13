@@ -76,5 +76,5 @@ Music Tie 에서는 이부분에 초점을 맞췄습니다.
 > Action 정리 해주세요
 
 ## Support
-- 이 프로젝트는 이더리운연구회(http://www.etherstudy.net)의 도움을 받고 있습니다
+- 이 프로젝트는 이더리운연구회(http://www.etherstudy.net) 의 도움을 받고 있습니다
 
