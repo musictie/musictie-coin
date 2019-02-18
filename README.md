@@ -75,6 +75,9 @@ Music Tie 에서는 이부분에 초점을 맞췄습니다.
 
 > Action 정리 해주세요
 
+## Token Economy
+![img_5045](https://user-images.githubusercontent.com/897510/51069580-20df4a80-1675-11e9-9d5d-95f40c0ab7c9.png)
+
 ## Support
 - 이 프로젝트는 이더리운연구회(http://www.etherstudy.net) 의 도움을 받고 있습니다
 
